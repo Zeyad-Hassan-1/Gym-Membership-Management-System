@@ -2,14 +2,15 @@ package org.example.admin;
 
 import org.example.User;
 
-public class Trainer extends User {
-    private final String trainerId;
-    private final String speciality;
+public class Trainer implements User {
+    private final String trainerId, speciality, name, email, phoneNumber;
 
     public Trainer(String trainerId, String name, String email, String speciality, String phoneNumber) {
-        super(name, email, phoneNumber);
         this.trainerId = trainerId;
         this.speciality = speciality;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
