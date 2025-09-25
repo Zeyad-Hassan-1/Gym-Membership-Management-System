@@ -1,24 +1,22 @@
 package org.example.admin;
 
-public class Trainer {
+import org.example.User;
+
+public class Trainer extends User {
     private final String trainerId;
-    private final String name;
-    private final String email;
     private final String speciality;
-    private final String phoneNumber;
 
     public Trainer(String trainerId, String name, String email, String speciality, String phoneNumber) {
+        super(name, email, phoneNumber);
         this.trainerId = trainerId;
-        this.name = name;
-        this.email = email;
         this.speciality = speciality;
-        this.phoneNumber = phoneNumber;
     }
 
+    @Override
     public String lineRepresentation() {
         return String.format("%s,%s,%s,%s,%s", trainerId, name, email, speciality, phoneNumber);
     }
-
+    @Override
     public String getSearchKey() {
         return trainerId;
     }
